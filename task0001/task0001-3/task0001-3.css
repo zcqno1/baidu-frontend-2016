@@ -1,0 +1,201 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	padding: 20px;
+	font-family: '微软雅黑';
+}
+
+img{
+	width: 80px;
+	height: 80px;
+	border: 1px solid #aaa;
+}
+
+/*圣杯布局*/
+.container1{
+	min-width: 602px;  /*<602时会产生错位*/
+	background-color: #eee;
+	border: 1px solid #999;
+	padding: 20px 160px 20px 240px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.intro{
+	width: 100%;
+	float: left;
+	background-color: #fff;
+	border: 1px solid #999;
+	padding: 20px;
+	word-break: break-all;
+	position: relative;
+}
+
+.team{
+	width: 200px;
+	float: left;
+	margin-left: -100%;
+	background-color: #fff;
+	border: 1px solid #999;
+	padding: 20px;
+	position: relative;
+	left: -220px;
+}
+
+.member{
+	width: 120px;
+	float: left;
+	margin-left: -120px;
+	background-color: #fff;
+	border: 1px solid #999;
+	padding: 20px;
+	padding-bottom: 0;
+	position: relative;
+	right: -140px;
+}
+
+/*team块*/
+.team img{
+	display: block;
+	float: left;
+}
+
+.team-name{
+	width: 78px;
+	float: left;
+}
+
+/*member块*/
+.member img{
+	margin-bottom: 20px;
+}
+
+
+/*双飞翼布局*/
+.container2{
+	min-width: 480px; /*无论宽度多小，三列不错位*/
+	margin-top: 20px;
+	background-color: #40F4A2;
+	border: 1px solid #aaa;
+	padding: 20px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.info,.who,.book{
+	background-color: #F7EFCC;
+	/*border: 1px solid #ccc;*/
+	padding: 20px;
+}
+
+.info-wrap,.who,.book{
+	float: left;
+}
+
+.info-wrap{
+	width: 100%;
+}
+
+.info{
+	margin: 0 140px 0 220px;
+	word-break: break-all;
+}
+
+.who{
+	width: 200px;
+	margin-left: -100%;
+}
+
+.book{
+	width: 120px;
+	margin-left: -120px;
+	padding-bottom: 0;
+}
+
+/*who块*/
+.who img{
+	display: inline-block;
+	margin-left: 39px;
+}
+
+.name{
+	width: 160px;
+	text-align: center;
+	padding: 10px 0;
+}
+
+/*info块*/
+.info h2{
+	color: #46CA86;
+	padding-left: 25px;
+	border-bottom: 2px solid #46CA86;
+	margin-bottom: 20px;
+}
+
+.info h3{
+	padding-left: 20px;
+	border-left: 5px solid #46CA86;
+}
+
+.info p{
+	margin: 10px 0 10px 25px;
+}
+
+/*book块*/
+.book img{
+	margin-bottom: 20px;
+	height: 120px;
+	display: block;
+}
+
+
+/*只用float*/
+.container3{
+	min-width: 550px;
+	margin-top: 20px;
+	background-color:	#65B8F8;
+	border: 1px solid #ccc;
+	padding: 20px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.book-list,.relate,.summary{
+	background-color: #ECFCFB;
+	border: 1px solid #ccc;
+	padding: 20px;
+}
+
+.book-list{
+	width: 200px;
+	float: left;
+}
+
+.relate{
+	width: 200px;
+	float: right;
+}
+
+.summary{
+	margin: 0 220px;
+}
+
+.container3 img{
+	width: 150px;
+	height: 200px;
+	margin-left: 4px;
+}
+
+.book-title{
+	width: 160px;
+	text-align: center;
+	padding: 4px;
+}
+
+.relate p{
+	margin: 0 0 20px 10px;
+}

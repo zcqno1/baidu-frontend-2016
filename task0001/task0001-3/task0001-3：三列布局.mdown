@@ -1,0 +1,39 @@
+##三列布局-圣杯布局、双飞翼布局、float实现
+
+此处三列布局的实现效果是左右两列固定宽度，中间一列根据浏览器宽度自适应。
+
+
+* ###圣杯布局
+
+1.左中右三列按center，left，right安排html；
+
+2.三列左浮动`float:left`，此时center在上，left和right紧挨着在center下左；（PS：如果漏了center的float，结果无法实现三列并排）
+
+3.left调节左外边距`margin-left:-100%`，100%宽度是父元素container的content的宽度，此时即为center的宽度。由于三列浮动，三列在同一context中，left会退至center里面与其左边界重合，right则退至center右侧与其右边界重合；
+
+4.right调节`margin-left:-[right宽度]`，这样right也进入center，left与right位置定好，但center两侧被盖住了部分；
+
+5.要调节center居中，调节父元素container的内边距`padding:? [right宽度] ? [left宽度]`，这样就为left和right腾出地方了，但父元素的padding同样作用于left和right，所以left、right和center的相对位置没变，其随center向中间移动；（PS：1.center应规定`width:100%`，这也是center实现自适应的基础，否则float之后的话center宽度变为内容宽度；2.不能使用center的margin是因为center宽度定为父元素的100%，margin之后不改变其宽度，从而会导致错位。）
+
+6.left和right向中间靠拢了，只需再移出来即可，使用相对定位`position:relative`，left调节`left:-[left宽度]`，right调节`right:-[right宽度]`，完成定位，是为**圣杯布局**。（PS：不能使用负边距来实现最后的移出是1.left前面用了`margin-left:-100%`，不能加上固定的宽度；2.right前面用了`margin-left:-[right宽度]`，再次使用margin-right无效，而缩小margin-left会导致right被挤到下面。）
+
+PS：第3步和第5步可对调，即从最重要的部分（center）开始，先让center居中，留出左右列空间，即先调节container的padding。
+
+> 基本思路：重要部分在前先定位-float之后将html后面的移到前面-相对定位移好位置。
+
+该方法可推广到两列或多列。
+
+* ###双飞翼布局
+
+双飞翼布局来源于圣杯布局的思路基础，在center中套一个center-inner（center的width依旧是100%），在上面第4步之后，使用center-inner调节`margin:? [right宽度] ? [left宽度]`来为left和right留出位置，并且之后不用调节left和right的位置了，也即不用使用position相对定位了，因为center的宽度没有变，left和right相对center的位置没有变，而是center-inner的宽度变了，而视觉上效果与圣杯布局是一样的。
+
+改变html之后dom tree的问题？
+
+* ###使用float实现
+
+1.html安排，left、right、center
+
+2.left左浮动，right右浮动，这样，left和right分别浮向左右，center依旧在下
+
+3.center调节`margin:? [right宽度] ? [left宽度]`，center的宽度（前面没有设定width）改变，插进left和right的中间，完成布局。
+

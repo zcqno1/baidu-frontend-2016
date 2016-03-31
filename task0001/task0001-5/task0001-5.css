@@ -1,0 +1,332 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #dedede;
+	min-width: 720px;
+	font-family: "微软雅黑";
+}
+
+/*头部*/
+.header{
+	width: 100%;
+	height: 60px;
+	background-color: #333;
+}
+
+.logo{
+	width: 120px;
+	float: left;
+	margin: 10px 40px;
+}
+
+.nav{
+	height: 60px;
+	float: right;
+	padding: 20px;
+}
+
+.nav li{
+	float: left;
+	list-style-type: circle;
+	font-size: 12px;
+	margin-left: 20px;
+}
+
+.nav a{
+	text-decoration: none;
+}
+
+.nav a:link{
+	color: #eff4f7;
+}
+
+.nav a:hover{
+	color: #a7a7a7;
+}
+
+.actived{
+	color: #a7a7a7 !important;
+}
+
+/*main*/
+.main{
+	padding: 20px;
+	margin-right: 380px;
+	float: left;
+}
+
+.clearfix::before,.clearfix::after{
+	content: " ";
+	display: table;
+}
+
+.clearfix::after{
+	clear: both;
+}
+
+.clearfix{
+	clear: both;
+	zoom: 1;
+}
+
+.box{
+	background-color: #fff;
+	border: 1px solid #cdcdcd;
+	box-shadow: 2px 1px 1px #848484;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+.article-1,.article-2,.article-3,.article-4{
+	width: 100%;
+	float: left;
+}
+
+.article-4{
+	margin-bottom: 0;
+}
+
+.main h1{
+	font-size: 20px;
+	padding: 20px 0;
+}
+
+.main h2{
+	font-size: 15px;
+	color: #656565;
+	padding-bottom: 18px;
+}
+
+.main header p{
+	font-size: 11px;
+	color: #656565;
+	padding-bottom: 20px;
+}
+
+.posttime{
+	margin-left: 5px;
+}
+
+.main article>p{
+	font-size: 14px;
+	line-height: 24px;
+	text-indent: 2em;
+}
+
+.article-4 p{
+	text-indent: 0 !important;
+}
+
+.article-1>p:last-child,.article-2>p:last-child{
+	padding-bottom: 20px;
+}
+
+.article-1 img,.article-2 img{
+	width: 300px;
+	height: 240px;
+	margin: 20px 0;
+}
+
+.article-2 li{
+	list-style-type: none;
+	margin-left: 20px;
+}
+
+.article-3{
+	overflow: hidden;
+	zoom: 1;
+}
+
+.article-3 div{
+	width: 122px;
+	height: 127px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px;
+	float: left;
+}
+
+.article-3 p{
+	font-size: 11px;
+	width: 100px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.article-3 img{
+	width: 100px;
+	height: 80px;
+}
+
+.article-4 ol{
+	margin: 0 0 20px 40px;
+	font-size: 15px;
+}
+
+.article-4 table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.article-4 thead{
+	height: 24px;
+	background-color: #333;
+	color: #fbffff;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.article-4 tbody{
+	height: 24px;
+	font-size: 12px;
+}
+
+.article-4 tfoot{
+	height: 24px;
+	background-color: #ccc;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.article-4 tr td:first-child,.article-4 tr td:1st-child{
+	width: 41.5%;
+}
+
+.article-4 tr td:last-child{
+	width: 17%;
+}
+
+
+/*aside*/
+.aside{
+	width: 360px;
+	float: right;
+	margin-left: -100%;
+	position: relative;
+	right: 20px;
+	top: 20px;
+}
+
+.aside h3{
+	font-size: 15px;
+	padding: 11px;
+	border-left: 3px solid #cdcdcd;
+}
+
+.aside table{
+	width: 100%;
+	margin-top: 10px;
+	font-size: 11px;
+	vertical-align: middle;
+}
+
+.aside td:first-child{
+	width: 103px;
+	text-align: right;
+	padding-right: 7px;
+
+}
+
+.aside td:last-child{
+	padding: 6px 0 6px 7px;
+}
+
+.tips{
+	color: #bbb;
+	padding-bottom: 18px !important;
+}
+
+.aside input[type=email],
+.aside input[type=password]{
+	width: 128px;
+	border: 1px solid #cdcdcd;
+	padding: 3px 2px;
+	font-size: 11px;
+}
+
+.aside input[checked]::-ms-check
+/*.aside input[type=checkbox]::-ms-check*/{
+	background-color: #389cff;
+	color: #fff;
+	font-size: 1px;
+	border: 1px solid #499df3;
+}
+
+.gap{
+	margin-right: 10px;
+}
+
+.gap input{
+	margin-right: 3px;
+}
+
+label[for=sex-male]{
+	margin-right: 10px;
+}
+
+.aside select{
+	width: 58px;
+	border: 1px solid #cdcdcd;
+	border-radius: 5px;
+	font-size: 10px;
+	padding: 0px 0 0px 10px;
+}
+
+.aside select::-ms-expand{
+	width: 12px;
+	padding: 2px 0 !important;
+	background-color: #4EA9FB;
+	color: #fff;
+	border-radius: 0 3px 3px 0;
+}
+
+.aside textarea{
+	width: 200px;
+	height: 6em;
+	border: 1px solid #cdcdcd;
+	resize: column;
+	font-size: 16px;
+}
+
+.description{
+	vertical-align: top;
+	padding-top: 6px;
+}
+
+.aside button{
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+	margin-top: 5px;
+	border: 0;
+	border-radius: 10px;
+	background-color: #3355d0;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.aside button:hover{
+	cursor: pointer;
+	background-color: #3A60E9;
+}
+
+/*footer*/
+.footer{
+	width: 100%;
+	height: 70px;
+	background-color: #000;
+	text-align: center;
+	padding-top: 22px;
+	clear: both;
+}
+
+.footer p{
+	color: #f4ffff;
+	font-size: 11px;
+	display: inline-block;
+}

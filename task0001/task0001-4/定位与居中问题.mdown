@@ -1,0 +1,93 @@
+## 定位与居中问题
+
+### position定位
+
+* #### fixed
+
+	固定定位，**以浏览器窗口为参照**，通过`left`、`right`、`top`、`bottom`进行位置确定，位置确定后不随滚动条位置变化而变化，与浏览器窗口相对位置不变。
+
+* #### relative
+
+	相对定位，相对被定位内容**原来的位置**进行定位，`left`、`right`、`top`、`bottom`均为相对原来的位置而言。
+
+* #### absolute
+
+	绝对定位，**以最近的定义了`position`属性的父元素为参考**，通过`left`、`right`、`top`、`bottom`来确定位置。
+
+### 居中
+
+CSS-TRICKS上有一篇总结居中的文章，根据定位内容的不同分类讨论。
+
+下面根据其分类所采取的不同方法归纳如下，有兴趣的可以点击：[Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/)
+
+* #### 水平居中
+
+	* 行内元素（`inline-*`）
+
+		`align-text:center`
+
+	* 块元素（`block`)
+
+		1. `margin:0 auto`
+
+		2. 绝对定位，`left:50%`，`margin-left:-[widht/2]`（宽固定）或`transform:transformX(-50%)`（宽不定）
+
+	* 多个块元素
+
+		* 并排
+
+			1. 转为`inline-block`再使用`text-align:center`。
+
+			2. 转为`flex`，再使用`justify-content`
+
+		* 并列
+
+			`margin:0 auto`
+
+* #### 垂直居中
+
+	* 行内元素（`inline-*`）
+
+		* 单行
+
+			1. 使用`padding-top`和`padding-bottom`
+
+			2. `line-height:height`
+
+		* 多行
+
+			1. 使用`padding-top`和`padding-bottom`
+
+			2. html使用`table-tr-td`代替`div`，然后使用`vertical-align:middle`，并且默认为该值
+
+			3. 父元素`display:table`，子元素`display:table-cell`，再设置`vertical-align`
+
+			4. 使用`flex`，`flex-direction:column`，`justify-content:center`
+
+			5. 使用“幽灵元素”（ghost element），父元素伪类`::before`设置`content:" "`、`display:inline-block`、`height:100%`、`width:1%`、`vertical-align:middle`，子元素设置`display:inline-block`、`vertical-align:middle`
+
+			PS：3、4、5的父元素高度应确定
+
+	* 块元素
+
+		* 元素高度固定
+
+			绝对定位，`top:50%`、`margin-top:-[height/2]`
+
+		* 元素高度可变
+
+			绝对定位，`top:50%`、`transform:transformY(-50%)`
+
+		* 使用flex
+
+* #### 水平垂直居中
+
+	* 固定宽高
+
+		绝对定位+负边距
+
+	* 宽高不定
+
+		绝对定位+transform
+
+	* 使用flex
