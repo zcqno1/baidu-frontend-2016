@@ -30,8 +30,8 @@ body{
 }
 
 .nav li{
+	width: 60px;
 	float: left;
-	list-style-type: circle;
 	font-size: 12px;
 	margin-left: 20px;
 }
