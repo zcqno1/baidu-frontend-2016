@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="uft-8">
+	<meta charset="utf-8">
 	<title>task0001-7:实现常见的技术产品官网的页面架构及样式布局</title>
 	<link rel="stylesheet" type="text/css" href="task0001-7.css">
 </head>
 <body>
-	<header class="header">
+
+	<!-- 页头 -->
+	<header class="header" id="header">
 		<div class="logo">
-			<img src="img/logo.png" alt="">
+			<img src="img/ico-logo.png" alt="">
 			<h1>新世界</h1>
 		</div>
 
-		<nav class="main-nav">
+		<nav class="nav-main">
 			<ul>
 				<li><a href="#">首页</a></li>
 				<li><a href="#">最近活动</a></li>
@@ -30,12 +32,13 @@
 			<h1>Time of new life</h1>
 			<h2>新时代，年轻的人们让我们一起<br>体验新生活，享受新生活</h2>
 		</header>
-		<button class="start">开始体验</button>
+		<button type="button" class="btn-start">开始体验</button>
 	</section>
 
-	<section class="features">
+	<!-- 特性 -->
+	<section class="features clearfix">
 		<div class="feature">
-			<img src="img/ico-circle.png" alt="">
+			<img src="img/ico-circles.png" alt="">
 			<p>打造全新世界观，让你更爱你的生活</p>
 		</div>
 		<div class="feature">
@@ -47,22 +50,26 @@
 			<p>时尚的新理念，超前体验未知的生活</p>
 		</div>
 		<div class="feature">
-			<img src="img/ico-squares" alt="">
+			<img src="img/ico-squares.png" alt="">
 			<p>完善的培养机制，培养你全新的世界观</p>
 		</div>
 	</section>
 
+	<!-- 问题 -->
 	<section class="question">
-		<img src="img/ico-logo-big.png">
+		<img src="img/ico-logo.png">
 		<p>关于新世界，你不知道的还有什么？</p>
 	</section>
 
+	<!-- 活动信息查找 -->
 	<section class="search">
 		<header>
 			<h3>查找新世界城市活动信息</h3>
+			<hr>
 			<p>每个城市的有不同的活动信息，请自主查询您所需要了解的城市</p>
 		</header>
-		<div class="options">
+
+<!-- 		<div class="options">
 			<div class="input country">国家</div>
 			<div class="option">
 				<ul>
@@ -95,9 +102,35 @@
 		</div>
 		<div class="options">
 			<button class="btn-search">搜&nbsp;&nbsp;&nbsp;&nbsp;索</button>
-		</div>
+		</div> -->
+
+		<form method="get" class="selects">
+			<select name="country">
+				<option>国家</option>
+				<option>中国</option>
+			</select><!--
+			--><img src="img/ico-down.png"><!--
+			--><select name="province">
+				<option>省份</option>
+				<option>北京市</option>
+				<option>天津市</option>
+				<option>广东省</option>
+				<option>福建省</option>
+				<option>内蒙古自治区</option>
+				<option>湖北省</option>
+			</select><!--
+			--><img src="img/ico-down.png"><!--
+			--><select name="city">
+				<option>城市</option>
+				<option>根据省份从数据库中读取</option>
+				<option>或使用JS生成</option>
+			</select><!--
+			--><img src="img/ico-down.png"><!--
+			--><button class="btn-search">搜&nbsp;&nbsp;&nbsp;&nbsp;索</button>
+		</form>
 	</section>
 
+	<!-- 活动推荐 -->
 	<section class="activity">
 		<div>
 			<img src="img/paint-1.jpg" alt="">
@@ -105,23 +138,23 @@
 				<h4>北京活动</h4>
 				<p>新社区大联盟</p>
 			</header>
-		</div>
-		<div>
+		</div><!--
+		--><div class="shanghai-activity">
 			<header>
 				<h4>上海活动</h4>
 				<p>夜上海新景观探索</p>
 			</header>
 			<img src="img/paint-2.jpg" alt="">
-		</div>
-		<div>
+		</div><!--
+		--><div>
 			<img src="img/paint-3.jpg" alt="">
 			<header>
 				<h4>深圳活动</h4>
 				<p>全新海岸线观点站</p>
 			</header>
-		</div>
-		<div>
-			<img src="" alt="">
+		</div><!--
+		--><div>
+			<img src="img/paint-4.jpg" alt="">
 			<header>
 				<h4>香港活动</h4>
 				<p>奢侈消费大派送</p>
@@ -129,45 +162,115 @@
 		</div>
 	</section>
 
-	<section class="new-world">
-		<div class="new-world-right">
+	<!-- 新世界 -->
+	<section class="new-world clearfix">
+		<article class="new-world-poster">
+			<p class="p1">新世界</p>
+			<p class="p2">TIME</p>
+			<p class="p3">@新世界-北京<br>2016.04.01</p>
+		</article>
+		<aside class="new-world-intro">
 			<header>
 				<img src="img/new-world-01.png" alt="">
 			</header>
-			 <p>新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界</p>
-			 <butto class="btn-detail">更多详情</button>
-			 <nav>
-			 	 <div class="slide-tip slide-checked"></div>
-			 	 <div class="slide-tip"></div>
-			 	 <div class="slide-tip"></div>
-			 </nav>
-		</div>
-		<div class="new-world-left">
-			<div class="new-world-info">
-				<p class="p1">新世界</p>
-				<p class="p2">TIME</p>
-				<p class="p3">@新世界-北京<br>2016.04.01</p>
-			</div>
-			<img src="img/new-world.jpg" alt="">
-			<img src="img/cut-left.jpg" alt="">
-		</div>
+			<p>新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界新世界是个新世界</p>
+			<button type="button" class="btn-detail" onclick="window.location='#'">更多详情</button>
+			<nav>
+			 	<div class="slide-tag slide-checked"></div>
+			 	<div class="slide-tag"></div>
+			 	<div class="slide-tag"></div>
+			</nav>
+		</aside>
 	</section>
 
-	<section class="new-time">
-		<div class="col-1">
+	<!-- 新时代 -->
+	<section class="new-time clearfix">
+		<section class="col-1">
 			<h4>新时代<br>关于爱生活的我们</h4>
 			<hr>
-			<button class="btn-more">查看更多</button>
-		</div>
-		<div class="col-2">
+			<button type="button" class="btn-more" onclick="window.location='#'">查看更多</button>
+		</section>
+		<section class="col-2">
 			<h4>新时代<br>关于爱生活的我们</h4>
 			<hr>
-			<button class="btn-more">查看更多</button>
-		</div>
-		<div class="col-3">
-			<img src="img/new-time.jpg" alt="">
-			<img src="img/cut-right.jpg" alt="">
-		</div>
+			<button type="button" class="btn-more" onclick="window.location='#'">查看更多</button>
+		</section>
+		<section class="col-3">
+		</section>
 	</section>
+
+	<!-- 成为我们的志愿者 -->
+	<section class="volunteer">
+		<h2>成为我们的志愿者</h2>
+		<hr>
+		<p>新世界的大家庭需要每一个爱生活的人的加入，如果你够年轻，有梦想，有激情那就不要犹豫，快来加入我们，成为改变所有人生活的人 </p>
+	</section>
+
+	<!-- 报名申请表单 -->
+	<section class="apply clearfix">
+		<article class="apply-form clearfix">
+			<form method="post">
+				<label for="name">姓名：</label>
+				<label for="age">年龄：</label>
+				<input type="text" name="name" id="name">
+				<input type="text" name="age" id="age">
+				<label for="contact">联系方式：</label>
+				<label for="address">联系地址：</label>
+				<input type="text" name="contact" id="contact">
+				<input type="text" name="address" id="address">
+				<label for="dream">请简单描述您梦想的生活：</label>
+				<textarea name="dream" id="dream"></textarea>
+				<input type="submit" value="提交申请" id="btn-apply">
+			</form>
+		</article>
+		<aside class="items">
+			<article>
+				<header>
+					<h3>新世界志愿者协议</h3>
+				</header>
+				<p>加入新世界志愿者的人员必须遵守中华人民共共和国的相关法律法规，并且本着平等资源的原则......</p>
+				<footer><a href="#">more</a></footer>
+			</article>
+			<article>
+				<header>
+					<h3>新世界志愿者权利</h3>
+				</header>
+				<p>新世界志愿者享受新世界内部所有资源共享的权利，并且享受所在四新世界活动的优先参与资格</p>
+				<footer><a href="#">more</a></footer>
+			</article>
+			<article>
+				<header>
+					<h3>更多条款</h3>
+				</header>
+				<footer><a href="#">more</a></footer>
+			</article>
+		</aside>
+	</section>
+
+	<!-- 联系我们 -->
+	<section class="contact">
+		<header>
+			<h2>联系我们</h2>
+		</header>
+		<p>为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯也可以通过以下任何方式关注我们动态</p>
+		<form method="post" name="subscribe" id="subscribe">
+			<input type="email" placeholder="someone@email.com" name="email">
+			<input type="submit" value="提 交" id="btn-contact">
+		</form>
+		<nav class="nav-contact">
+			<ul>
+				<li><a href="http://wpa.qq.com/msgrd?V=1&Uin=814049636&Site=新世界&Menu=yes" title="QQ"><img src="img/ico-qq.png" alt=""></a></li>
+				<li><a href="http://weibo.com/zcqno1" title="微博"><img src="img/ico-weibo.png" alt=""></a></li>
+				<li><a href="http://twitter.com/" title="Twitter"><img src="img/ico-twitter.png" alt=""></a></li>
+				<li><a href="#" title="what's this?"><img src="img/ico-world.png" alt=""></a></li>
+			</ul>
+		</nav>
+	</section>
+
+	<!-- 页脚 -->
+	<footer class="footer clearfix">
+		<p class="fp-1">@2016新世界</p>
+		<p class="fp-2"><a href="#header">Back to top</a></p>
+	</footer>
 </body>
 </html>
