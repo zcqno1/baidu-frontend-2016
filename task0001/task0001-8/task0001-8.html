@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>task0001-8:响应式网格（栅格化）布局</title>
+	<link rel="stylesheet" type="text/css" href="task0001-8.css">
+</head>
+<body>
+	<h1>float实现</h1>
+	<div class="container clearfix">
+		<div class="row row-fluid">
+			<div class="col-md-4 col-sm-6"><div class="flag-1"></div></div>
+			<div class="col-md-4 col-sm-12"><div class="flag-2"></div></div>
+			<div class="col-md-4 col-sm-6"><div class="flag-3"></div></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"><div class="flag-4"></div></div>
+			<div class="col-md-6"><div class="flag-5"></div></div>
+			<div class="col-md-3"><div class="flag-6"></div></div>
+		</div>
+		<div class="row row-fluid">
+			<div class="col-md-1 col-sm-2"><div class="flag-7"></div></div>
+			<div class="col-md-1 col-sm-2"><div class="flag-8"></div></div>
+			<div class="col-md-2 col-sm-3"><div class="flag-9"></div></div>
+			<div class="col-md-2 col-sm-3"><div class="flag-10"></div></div>
+			<div class="col-md-6 col-sm-8"><div class="flag-11"></div></div>
+		</div>
+	</div>
+
+	<div class="container clearfix">
+		<div class="row row-fluid">
+			<div class="col-md-4 col-sm-6 flag-1"></div>
+			<div class="col-md-4 col-sm-12 flag-2"></div>
+			<div class="col-md-4 col-sm-6 flag-3"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 flag-4"></div>
+			<div class="col-md-6 flag-5"></div>
+			<div class="col-md-3 flag-6"></div>
+		</div>
+		<div class="row row-fluid">
+			<div class="col-md-1 col-sm-2 flag-7"></div>
+			<div class="col-md-1 col-sm-2 flag-8"></div>
+			<div class="col-md-2 col-sm-3 flag-9"></div>
+			<div class="col-md-2 col-sm-3 flag-10"></div>
+			<div class="col-md-6 col-sm-8 flag-11"></div>
+		</div>
+	</div>
+
+	<h1>flex实现</h1>
+	<div class="container-flex clearfix">
+		<div class="row-flex">
+			<div class="col-md-4 col-sm-6 flag-1"></div>
+			<div class="col-md-4 col-sm-12 flag-2"></div>
+			<div class="col-md-4 col-sm-6 flag-3"></div>
+		</div>
+		<div class="row-flex">
+			<div class="col-md-3 flag-4"></div>
+			<div class="col-md-6 flag-5"></div>
+			<div class="col-md-3 flag-6"></div>
+		</div>
+		<div class="row-flex">
+			<div class="col-md-1 col-sm-2 flag-7"></div>
+			<div class="col-md-1 col-sm-2 flag-8"></div>
+			<div class="col-md-2 col-sm-3 flag-9"></div>
+			<div class="col-md-2 col-sm-3 flag-10"></div>
+			<div class="col-md-6 col-sm-8 flag-11"></div>
+		</div>
+	</div>
+
+</body>
+</html>
