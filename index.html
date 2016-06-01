@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<!-- 导航 -->
 	<header class="header clearfix">
 		<nav>
 			<ul>
@@ -118,32 +119,32 @@
 		</header>
 		<nav>
 			<ul>
-				<li class="level-easy unfinished">
-					<a href="task0001/task0002-13/task0002-13.html" target="_blank">
+				<li class="level-easy">
+					<a href="task0002/task0002-1/task0002-1.html#task-13" target="_blank">
 						<p>任务十三：零基础JavaScript编码（一）</p>
 					</a>
 				</li>
 
-				<li class="level-easy unfinished">
-					<a href="task0001/task0002-14/task0002-14.html" target="_blank">
+				<li class="level-easy">
+					<a href="task0002/task0002-1/task0002-1.html#task-14" target="_blank">
 						<p>任务十四：零基础JavaScript编码（二）</p>
 					</a>
 				</li>
 
-				<li class="level-easy unfinished">
-					<a href="task0001/task0002-15/task0002-15.html" target="_blank">
+				<li class="level-easy">
+					<a href="task0002/task0002-1/task0002-1.html#task-15" target="_blank">
 						<p>任务十五：零基础JavaScript编码（三）</p>
 					</a>
 				</li>
 
-				<li class="level-normal unfinished">
-					<a href="task0001/task0002-16/task0002-16.html" target="_blank">
+				<li class="level-normal">
+					<a href="task0002/task0002-1/task0002-1.html#task-16" target="_blank">
 						<p>任务十六：零基础JavaScript编码（四）</p>
 					</a>
 				</li>
 
-				<li class="level-normal unfinished">
-					<a href="task0001/task0002-17/task0002-17.html" target="_blank">
+				<li class="level-normal">
+					<a href="task0002/task0002-1/task0002-1-5.html" target="_blank">
 						<p>任务十七：零基础JavaScript编码（五）</p>
 					</a>
 				</li>
@@ -265,6 +266,7 @@
 		</nav>
 	</section>
 
+<!-- 页脚 -->
 	<footer class="footer clearfix">
 		<nav class="frend-link">
 			<header>
@@ -283,5 +285,33 @@
 			</ul>
 		</nav>
 	</footer>
+
+	<script type="text/javascript">
+		//未完成禁止点击
+		var liUnf= document.getElementsByClassName("unfinished");
+		for(var i = 1; i < liUnf.length; i++){
+			var aVoid = liUnf[i].getElementsByTagName("a");
+			aVoid[0].href = "javascript:void(0)";
+		}
+		//点击图例显示相应任务
+		var legends = document.getElementsByClassName("legend")[0].getElementsByTagName("div");
+		for(var i = 0; i < legends.length; i++){
+			legends[i].addEventListener("click", function(){
+				//隐藏所有任务
+				var sections = document.getElementsByTagName("section");
+				for(var j = 1; j < sections.length; j++){
+					var liAll = sections[j].getElementsByTagName("li");
+					for(var k = 0; k < liAll.length; k++){
+					liAll[k].style.display = "none";
+					}
+				}
+				//显示相应任务
+				var liShow = document.getElementsByClassName(this.className);
+				for(var j = 1; j < liShow.length; j++){
+					liShow[j].style.display = "block";
+				}
+			})
+		}
+	</script>
 </body>
 </html>

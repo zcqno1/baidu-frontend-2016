@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "微软雅黑";
+}
+
+body{
+	min-width: 1000px;
+}
+
+/*输入选择 start*/
+fieldset{
+	border: 2px solid #89aa97;
+	padding: 10px;
+	display: block;
+	text-align: center;
+	margin: 20px 0;
+	border-radius: 10px;
+}
+
+fieldset:first-child{
+	width: 400px;
+	float: left;
+	margin-left: 14%;
+}
+
+fieldset:nth-child(2){
+	width: 300px;
+	float: right;
+	margin-right: 14%;
+}
+
+legend{
+	margin-left: 20px;
+	padding: 5px 10px;
+	font-size: 18px;
+	background-color: #89aa97;
+	color: #fff;
+	border-radius: 5px;
+}
+
+fieldset:nth-child(2) select{
+	width: 80px;
+	padding: 2px 0 2px 1em;
+}
+
+#form-gra-time label{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	position: relative;
+	margin-right: 10px;
+	cursor: pointer;
+	background-color: #fff;
+}
+
+#form-gra-time label:hover{
+	background-color: #8FB9A1;
+}
+
+#form-gra-time input[type = radio]{
+	display: block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 0;
+	color: #70E5AD;
+	opacity: 0;
+	z-index: -1;
+}
+
+#form-gra-time input[checked = checked]{
+	color: #70e5ad;
+}
+
+.gra-time-active{
+	background-color: #8FB9A1 !important;
+}
+
+/*输入选择 end*/
+
+/*柱状图 start*/
+#aqi-chart-wrap{
+	width: 1000px;
+	height: 540px;
+	margin: 0 auto;
+	border-bottom: 1px solid #666;
+	text-align: center;
+	clear: both;
+}
+
+#aqi-chart-wrap h1{
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: 400;
+}
+
+#aqi-chart-wrap:after{
+	content: " ";
+	display: inline-block;
+	height: 519px;
+	width: 0;
+}
+
+#aqi-chart-wrap div{
+	height: 0;
+	border: 1px solid #fff;
+	display: inline-flex;
+	transition: height 1.5s;
+	border-bottom: 0;
+}
+
+.day{
+	width: 10px;
+}
+
+.week{
+	width: 50px;
+	margin: 0 10px;
+}
+
+.month{
+	width: 150px;
+	margin: 0 80px;
+}
+/*柱状图 end*/
+
