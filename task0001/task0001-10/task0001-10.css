@@ -1,0 +1,65 @@
+html, body, div{
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container{
+	width: 100%;
+	padding: 20px;
+	background-color: #77CFFF;
+	/*margin: auto 0;*/
+}
+
+
+.container div{
+	width: 150px;
+	background-color: #FBE765;
+	margin-bottom: 20px;
+	color: #fff;
+	text-align: center;
+	font-size: 30px;
+
+}
+
+.container div:nth-child(1){
+	height: 120px;
+	line-height: 120px;
+}
+
+.container div:nth-child(2){
+	height: 100px;
+	line-height: 100px;
+}
+
+.container div:nth-child(3){
+	height: 40px;
+	line-height: 40px;
+}
+
+.container div:nth-child(4){
+	height: 200px;
+	line-height: 200px;
+	background-color: #FF9573;
+}
+
+/*flexbox布局*/
+.flexbox{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-items: baseline;
+}
+
+
+@media screen and (max-width: 640px){
+	.flexbox{
+		flex-flow: row wrap;
+		align-items: flex-start;
+	}
+
+	.flexbox div:nth-child(4){
+		order: -1;
+	}
+
+}

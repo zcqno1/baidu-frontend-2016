@@ -1,0 +1,333 @@
+html, body, header, nav, section, article, footer, div, ul, li, p, span, a, h1, h2, h3, img{
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/*以1000px宽度为基准，font-size通过js设置*/
+
+html, body{
+	width: 100%;
+	height: 100%;
+	/*font-size: 40px;*/ /*因为chrome中font-size最小值为12px，故在此设置较大比例。Edge中此处有Bug，js设置的内部样式无法覆盖，故将其注释掉，但自适应*/
+	background-color: #f5f5f5;
+}
+
+ul, li{
+	padding: 0;
+}
+
+li{
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+/**
+ * 标题
+*/
+.header{
+	width: 100%;
+	height: 2.875rem;
+	background-color: #c5551d;
+}
+
+
+.header h1{
+	font: 1.24rem/2.875rem "黑体";
+	color: #fff;
+	text-align: center;
+}
+
+.back{
+	margin-top: -2.875rem;
+	padding-left: 0.75rem;
+}
+
+.back a{
+	font: 1.075rem/2.875rem "黑体";
+	color: #fff;
+}
+
+.back .backico{
+	display: inline-block;
+	font: 1.35rem/2.875rem "黑体";
+	vertical-align: middle;
+	padding-right: 0.375rem;
+}
+
+.back .backtxt{
+	vertical-align: middle;
+}
+
+/**
+ * 导航
+ */
+.nav{
+	width: 100%;
+	height: 2.875rem;
+	background-color: #fff;
+}
+
+.nav ul{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+
+.nav li{
+	width: 20%;
+	height: 2.875rem;
+	text-align: center;
+}
+
+.nav a{
+	display: block;
+	width: 100%;
+	height: 2.875rem;
+	font: 1.25rem/2.875rem "Microsoft YaHei";
+	color: #707070;
+}
+
+.nav .active{
+	border-bottom: 0.25rem solid #c5551d;
+}
+
+/**
+ * banner
+ */
+.banner{
+	width: 100%;
+	height: 13.75rem;
+	overflow: hidden;
+}
+
+.banner img{
+	width: 100%;
+}
+
+/**
+ * 标签
+ */
+.tags{
+	width: 100%;
+	padding: 1.125rem 0.75rem;
+	background-color: #fff;
+}
+
+.tags ul{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	padding-bottom: 1.125rem;
+	border-bottom: 1px solid #dfdfdf;
+}
+
+.tags li{
+	width: 20%;
+	text-align: center;
+}
+
+.tags a{
+	display: block;
+	font: 0.875rem/0.875rem "Microsoft YaHei";
+	color: #3a3a3a;
+}
+
+.tags img{
+	display: inline-block;
+	width: 80%;
+	border-radius: 100%;
+	margin-bottom: 1rem;
+}
+
+/**
+ * 分栏
+ */
+.columns{
+	width: 100%;
+	padding: 1rem 0.75rem;
+	background-color: #fff;
+}
+
+.columns ul{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+
+.columns li{
+	width: 33%;
+	text-align: center;
+	border-right: 1px solid #dfdfdf;
+}
+
+.columns li:last-child{
+	border-right: 0;
+}
+
+.columns a{
+	display: block;
+	width: 100%;
+	padding-top: 5rem;
+	background: url("img/renwu.jpg") no-repeat center 0.5rem;
+	background-size: auto 4.5rem;
+}
+
+.columns h2{
+	font: 1.125rem/1.875rem "黑体";
+	color: #2f2f2f;
+}
+
+.columns h3{
+	font: 0.85rem/1.65rem "黑体";
+	color: #6c6c6c;
+	white-space: nowrap;
+}
+
+/**
+ * 模块
+ */
+.module{
+	padding: 0.125rem 0.8rem 0.25rem 0.625rem;
+	background-color: #fff;
+	margin-top: 0.875rem;
+}
+
+.module h2{
+	font: 1.125rem/2.875rem "Microsoft YaHei";
+	color: #6c6c6c;
+	border-bottom: 1px solid #eaeaea;
+	margin-bottom: 1rem;
+}
+
+.module>div{
+	width: 100%;
+	margin-bottom: 0.625rem;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.module>div>div{
+	width: 6.05rem;
+	height: 5.7rem;
+}
+
+.module img{
+	/*width: 100%;*/
+	height: 100%;
+}
+
+.module ul{
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
+.module li{
+	width: 8rem;
+	height: 2.5rem;
+	flex: 1 7rem;
+	background-color: #f5f5f5;
+	text-align: center;
+	margin-left: 0.65rem;
+	margin-bottom: 0.65rem;
+}
+
+.module li:nth-child(n+3){
+	margin-bottom: 0;
+}
+
+.module a{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font: 0.825rem/0.825rem "Microsoft YaHei";
+	color: #4a4a4a;
+}
+
+/**
+ * 文章列表
+ */
+.article-lists{
+	width: 100%;
+	margin-top: 0.825rem;
+	background-color: #fff;
+}
+
+.article-list{
+	width: 100%;
+	height: 6.2rem;
+	border-bottom: 1px solid #eaeaea;
+	padding: 0.55rem 0.75rem 0.65rem;
+	background-color: #fff;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	align-content: flex-start;
+	flex: none;
+}
+
+.article-list:last-child{
+	border-bottom: 0;
+}
+
+.article-list h2{
+	font: 1.125rem/1.5rem "Microsoft YaHei";
+	color: #656565;
+}
+
+.article-list footer p,
+.article-list footer a{
+	font: 0.875rem/1.175rem "Microsoft YaHei";
+	color: #d0d0d0;
+}
+
+.article-pic div{
+	width: 7rem;
+	height: 5rem;
+	order: -1;
+	overflow: hidden;
+	margin-right: 0.8rem;
+	text-align: center;
+}
+
+.article-pic img{
+	/*width: 100%;*/
+	height: 100%;
+}
+
+.article-pic header{
+	width: 15.625rem;
+}
+
+.article-pics{
+	display: block;
+	height: 9.75rem;
+}
+
+.article-pics div>a{
+	width: 100%;
+	padding: 0.475rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.article-pics img{
+	width: 7.75rem;
+	max-height: 5.125rem;
+	margin-right: 0.175rem;
+}
+
+.article-pics img:last-child{
+	margin-right: 0;
+}
+
+.article-list:last-child{
+	margin-bottom: 3.375rem;
+}

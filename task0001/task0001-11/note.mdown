@@ -1,0 +1,18 @@
+demo：[移动Web页面布局实践](https://github.com/zcqno1/baidu-frontend-2016/tree/master/task0001/task0001-11/task0001-11.html)
+
+[设计稿](https://github.com/zcqno1/baidu-frontend-2016/tree/master/task0001/task0001-11/img/task_1_11_1.jpg)
+
+这个移动页面花了较长时间，在布局方式的选择上纠结了不少时间。根据一些资料（比如说[这里](http://sentsin.com/web/54.html)）的建议，移动页面不宜使用`float`等布局方式（未细究），所以最后页面主要使用上一任务中学习的flexbox布局，但因为对应html结构、对自适应的考虑及对flex布局的不够熟悉等原因，遇到较多问题，总的说来这个任务还是flex布局的一个实践。
+
+任务碰到的一些问题如下：
+
+* rem单位的使用：一开始不太理解rem的原理，只对html设置了`font-size`定值，实际跟使用px没什么差别。后来参考了[《web app变革之rem》](https://isux.tencent.com/web-app-rem.html)，基本搞懂了rem的用法，然后以1000宽度为基准，重新测量设计稿的尺寸，并在html里使用js根据屏幕尺寸设置`font-size`。
+
+* chrome中中文`font-size`最小值为12px，小于12px会被置为12px，以前有个属性`-webkit-text-size-adjust`可以控制浏览器对字号的调整，现在已经不支持，只要是考虑到如果该属性值若为none，在缩放网页时，文字不会随网页变化，影响网页效果。若要实现小于12px的文字显示，可使用属性`transform: scale(0.5)`来设置。[参考](http://blog.csdn.net/freshlover/article/details/9746821)
+
+* 文章列表部分的html使用了统一的`header ~ div>img ~ footer`的`article`结构，因为在flex布局上设置主轴方向沿列方向`flex-flow: column wrap;`，可换行。那么，对于但图片文章列表项，`div>img`需要通过设置`order: -1`提前显示。开始遇到的困惑就是，主轴沿列方向，要产生换行，必须规定伸缩容器的高度，并且第一个伸缩项目占据所有高度。在这个设置过程中，由于对flex的不熟练，在对齐上花费较多精力。
+
+* 模块部分，列表设置了一个宽度，同时设置`flex: 1 7rem;`对其进行伸缩，宽度实际可省略，由`flex-basis`设定，其值不能太小，以保证可以换行，也不能太大，导致每一项都换行，可设置为比1000宽度基准下的宽度稍小。
+
+* 网页字体未能复原
+

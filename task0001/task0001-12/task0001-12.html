@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>task-12：学习CSS 3的新特性</title>
+	<link rel="stylesheet" type="text/css" href="task0001-12.css">
+</head>
+<body>
+	<!-- 表格 start -->
+	<section class="color-table">
+		<header>
+			<h1>表格</h1>
+			<p>CSS3新特性：子元素选择器（nth-child(n)）</p>
+		</header>
+		<table>
+			<thead>
+				<tr>
+					<td>排名</td>
+					<td>网站</td>
+					<td>热度</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1.</td>
+					<td>百度前端技术学院</td>
+					<td>13000</td>
+				</tr>
+				<tr>
+					<td>2.</td>
+					<td>百度前端技术学院</td>
+					<td>12000</td>
+				</tr>
+				<tr>
+					<td>3.</td>
+					<td>百度前端技术学院</td>
+					<td>11000</td>
+				</tr>
+				<tr>
+					<td>4.</td>
+					<td>百度前端技术学院</td>
+					<td>10000</td>
+				</tr>
+				<tr>
+					<td>5.</td>
+					<td>百度前端技术学院</td>
+					<td>9000</td>
+				</tr>
+				<tr>
+					<td>6.</td>
+					<td>百度前端技术学院</td>
+					<td>8000</td>
+				</tr>
+				<tr>
+					<td>7.</td>
+					<td>百度前端技术学院</td>
+					<td>7000</td>
+				</tr>
+				<tr>
+					<td>8.</td>
+					<td>百度前端技术学院</td>
+					<td>6000</td>
+				</tr>
+				<tr>
+					<td>9.</td>
+					<td>百度前端技术学院</td>
+					<td>5000</td>
+				</tr>
+				<tr>
+					<td>10.</td>
+					<td>百度前端技术学院</td>
+					<td>4000</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<!-- 表格 end -->
+	<!-- 输入框 start -->
+	<section class="inputbox">
+		<header>
+			<h1>输入框</h1>
+			<p>CSS3新特性：伪类（:focus），过渡（transition），阴影（box-shadow）</p>
+		</header>
+		<div>
+			<input type="text" name="test">
+		</div>
+	</section>
+	<!-- 输入框 end -->
+	<!-- 图片轮播 start -->
+	<section class="slide-section">
+		<header>
+			<h1>图片轮播</h1>
+			<p>CSS3新特性：动画（animation），兄弟选择器（~）</p>
+		</header>
+		<div class="slide">
+			<input type="radio" name="slide-nav" id="slide-1" checked="checked">
+			<input type="radio" name="slide-nav" id="slide-2">
+			<input type="radio" name="slide-nav" id="slide-3">
+			<nav class="slide-nav"><ul>
+				<li><label for="slide-1">1</label></li>
+				<li><label for="slide-2">2</label></li>
+				<li><label for="slide-3">3</label></li>
+			</ul></nav>
+			<ul class="slide-img" id="slide-imgs">
+				<li><img src="img/img-1.jpg"></li>
+				<li><img src="img/img-2.jpg"></li>
+				<li><img src="img/img-3.jpg"></li>
+			</ul>
+		</div>
+	</section>
+	<!-- 图片轮播 end -->
+</body>
+</html>

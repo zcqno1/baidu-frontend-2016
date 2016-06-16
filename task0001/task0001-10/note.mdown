@@ -1,0 +1,87 @@
+## Flexbox布局
+
+demo：[Flexbox布局练习](https://github.com/zcqno1/baidu-frontend-2016/tree/master/task0001/task0001-10/task0001-10.html)
+
+`display: other value || flex || inline-flex;`
+
+几个概念：
+
+1. 主轴(main axis)，伸缩布局的主方向。
+
+2. 侧轴(cross axis)，伸缩布局的辅助方向，与主轴垂直。
+
+3. 伸缩项目(flex item)，伸缩容器内直接子节点，包括直接块子元素、行子元素、连续的本文等。
+
+4. 轴方向，flex-start  ->  flex-end。
+
+flex布局是以主轴为基本单位的，形成新行后伸缩项目伸缩、对齐等操作以新行为参考。
+
+几个属性：
+
+1. `flex-direction: row || row-reverse || column || column-reverse;`
+
+	定义主轴方向，`*-reverse`是反向的意思，默认值为`row`。
+
+2. `flex-wrap: nowrap || wrap || wrap-reverse;`
+
+	是否换行，`nowrap`不换行，一行布局；`wrap`换行；`wrap-reverse`反向换行。默认值`nowrap`。
+
+3. `flex-flow: [flex-direction] [flex-wrap];`
+
+	伸缩布局流，`flex-direction`和`flex-wrap`的简写，默认值`row nowrap`。
+
+4. `justify-content: flex-start || flex-end || center || space-between || space-around;`
+
+	伸缩项目沿主轴分布。
+
+	* `flex-start`，主轴始端
+	* `flex-end`，主轴末端
+	* `center`，行居中
+	* `space-between`，两端伸缩项目贴伸缩容器两端，中间的伸缩项目平均分布
+	* `space-around`，每个伸缩项目两侧的空间相同，亦即两端伸缩项目与容器的距离为相邻伸缩项目间距的一半
+
+5. `align-items: flex-start || flex-end || center || baseline || stretch;`
+
+	伸缩项目侧轴方向分布。
+
+	* `flex-start`，侧轴始端对齐
+
+	* `flex-end`，侧轴末端对齐
+
+	* `center`，居中对齐
+
+	* `baseline`，伸缩项目基线
+
+	* `stretch`，伸缩项目伸缩填充整个伸缩容器
+
+6. `align-content: flex-start || flex-end || center || space-between || space-around || stretch;`
+
+	伸缩行在沿侧轴的分布，属性值类似于`justify-content`。
+
+7. `align-self: auto || flex-start || flex-end || center || baseline || stretch;`
+
+	单独的伸缩项目主轴对齐设置，属性值同`align-items`。
+
+8. `flex-ground: <number>;`
+
+	伸缩项目伸长比例，默认为0，负值无效。伸缩项目具体的伸长大小与伸缩容器可用空间及其他伸缩项目的伸缩比例有关。
+
+9. `flex-shrink: <number>;`
+
+	伸缩项目缩短比例，默认为1，负值无效。
+
+10. `flex-basis: auto || <length>;`
+
+	伸缩基准值，剩余的空间按比例进行伸缩。默认auto。
+
+11. `flex: [flex-grow] [flex-shrink] [flex-basis];`
+
+	伸缩值设置简写。只有一个不带单位的值时是`flex-grow`，只有一个单位的值时是`flex-basis`，一个不带单位和一个带单位时是`flex-grow`和`flex-basis`，两个不带单位时是`flex-grow`和`flex-shrink`。表示`flex-basis`时一定要带单位。
+
+12. `order: <integer>;`
+
+	伸缩项目的排列顺序，会html中出现的顺序，`order`值相同时，顺序按原来的先后顺序。
+
+[参考](https://segmentfault.com/a/1190000002910324)
+
+
