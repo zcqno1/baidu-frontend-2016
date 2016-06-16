@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0">
+	<title>移动Web页面布局实践</title>
+	<link rel="stylesheet" type="text/css" href="task0001-11.css">
+
+</head>
+<body>
+	<!-- 标题 start -->
+	<header class="header">
+		<h1>龙珠·超</h1>
+		<p class="back"><a href="javascript:history.go(-1)"><span class="backico">&lt;</span><span class="backtxt">返回</span></a></p>
+	</header>
+	<!-- 标题 end -->
+	<!-- 导航 start -->
+	<nav class="nav">
+		<ul>
+			<li><a href="#">首页</a></li>
+			<li class="active"><a href="#">新闻</a></li>
+			<li><a href="#">图片</a></li>
+			<li><a href="#">视频</a></li>
+			<li><a href="#">音乐</a></li>
+		</ul>
+	</nav>
+	<!-- 导航 end -->
+	<!-- banner start -->
+	<section class="banner">
+		<img src="img/banner.jpg" alt="">
+	</section>
+	<!-- banner end -->
+	<!-- 标签 start -->
+	<section class="tags">
+		<ul>
+			<li><a href="#"><img src="img/goku.jpg"><br>悟空</a></li>
+			<li><a href="#"><img src="img/begita.jpg"><br>贝吉塔</a></li>
+			<li><a href="#"><img src="img/bike.jpg"><br>比克</a></li>
+			<li><a href="#"><img src="img/gohan.jpg"><br>悟饭</a></li>
+			<li><a href="#"><img src="img/bilusi.jpg"><br>比鲁斯</a></li>
+		</ul>
+	</section>
+	<!-- 标签 end -->
+	<!-- 分栏 start -->
+	<section class="columns">
+		<ul>
+			<li>
+				<a href="#">
+					<header>
+						<h2>人物</h2>
+						<h3>人物介绍</h3>
+					</header>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<header>
+						<h2>招式</h2>
+						<h3>招式分析</h3>
+					</header>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<header>
+						<h2>战斗</h2>
+						<h3>战斗数据回放</h3>
+					</header>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- 分栏 end -->
+	<!-- 明星战士 start -->
+	<section class="module soldier">
+		<header>
+			<h2>明星战士</h2>
+		</header>
+		<div>
+			<div>
+				<a href="#"><img src="img/goku.jpg" alt=""></a>
+			</div>
+			<ul>
+				<li><a href="#">龟波气功</a></li>
+				<li><a href="#">界王拳</a></li>
+				<li><a href="#">瞬间转移</a></li>
+				<li><a href="#">元气弹</a></li>
+			</ul>
+		</div>
+		<div>
+			<div>
+				<a href="#"><img src="img/begita.jpg" alt=""></a>
+			</div>
+			<ul>
+				<li><a href="#">气功波</a></li>
+				<li><a href="#">肮脏的烟火</a></li>
+				<li><a href="#">吉利克炮</a></li>
+				<li><a href="#">终极闪光</a></li>
+			</ul>
+		</div>
+	</section>
+	<!-- 明星战士 end -->
+	<!-- 大Boss start -->
+	<section class="module soldier">
+		<header>
+			<h2>明星战士</h2>
+		</header>
+		<div>
+			<div>
+				<a href="#"><img src="img/goku.jpg" alt=""></a>
+			</div>
+			<ul>
+				<li><a href="#">龟波气功</a></li>
+				<li><a href="#">界王拳</a></li>
+				<li><a href="#">瞬间转移</a></li>
+				<li><a href="#">元气弹</a></li>
+			</ul>
+		</div>
+		<div>
+			<div>
+				<a href="#"><img src="img/begita.jpg" alt=""></a>
+			</div>
+			<ul>
+				<li><a href="#">气功波</a></li>
+				<li><a href="#">肮脏的烟火</a></li>
+				<li><a href="#">吉利克炮</a></li>
+				<li><a href="#">终极闪光</a></li>
+			</ul>
+		</div>
+	</section>
+	<!-- 大Boss end -->
+	<!-- 文章列表 start -->
+	<section class="article-lists">
+		<article class="article-list article-pic">
+			<header>
+				<a href="#"><h2>比鲁斯大人久等了，超级赛亚人之神终于诞生！</h2></a>
+			</header>
+			<div>
+				<a href="#"><img src="img/news-1.jpg"></a>
+			</div>
+			<footer>
+				<p><a href="#">文章来源</a> 6分钟前</p>
+			</footer>
+		</article>
+		<article class="article-list article-pic">
+			<header>
+				<a href="#"><h2>全力战斗！ 复仇的黄金弗利萨</h2></a>
+			</header>
+			<div>
+				<a href="#"><img src="img/news-2.jpg"></a>
+			</div>
+			<footer>
+				<p><a href="#">文章来源</a> 6分钟前</p>
+			</footer>
+		</article>
+		<article class="article-list article-pics">
+			<header>
+				<a href="#"><h2>混乱的庆功宴！终于对决！？莫纳卡VS孙悟空</h2></a>
+			</header>
+			<div>
+				<a href="#"><img src="img/news-3-1.jpg"><img src="img/news-3-2.jpg">
+				<img src="img/news-3-3.jpg"></a>
+			</div>
+			<footer>
+				<p><a href="#">文章来源</a> 6分钟前</p>
+			</footer>
+		</article>
+	</section>
+	<!-- 文章列表 end -->
+	<script type="text/javascript">
+		function countFontSize(){
+			var fz = window.innerWidth / 1000 * 40;
+			document.getElementsByTagName("html")[0].setAttribute("style", "font-size: " + fz + "px");
+		}
+		window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", countFontSize);
+		countFontSize();
+	</script>
+</body>
+</html>

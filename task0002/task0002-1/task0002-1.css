@@ -1,0 +1,254 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-shadow: border-box;
+	font-family: "微软雅黑";
+}
+
+li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+/*清除浮动*/
+.clear-fix:before,
+.clear-fix:after{
+	content: " ";
+	display: table;
+}
+
+.clear-fix:after{
+	clear: both;
+	zoom: 1;
+}
+
+.clear-fix{
+	clear: both;
+}
+
+/*导航条*/
+.nav{
+	width: 100%;
+	height: 60px;
+	padding-left: 60px;
+	background-color: #61b292;
+	position: fixed;
+	top: 0;
+}
+
+.nav li{
+	float: left;
+	width: 160px;
+	height: 60px;
+	list-style: none;
+}
+
+.nav a{
+	display: inline-block;
+	width: 160px;
+	height: 60px;
+	color: #fff;
+	font-size: 26px;
+	line-height: 60px;
+	text-align: center;
+}
+
+.nav a:hover{
+	background-color: #a8896c;
+}
+
+
+/*任务section及标题*/
+section{
+	height: 700px;
+	padding: 100px 60px 0 60px;
+}
+
+/*#task-13{
+	margin-top: 100px;
+}*/
+
+h2{
+	height: 60px;
+	background-color: #aed09e;
+	border-left: 5px solid #a8896c;
+	padding-left: 30px;
+	color: #666;
+	font-size: 26px;
+	line-height: 60px;
+	margin-bottom: 20px;
+}
+
+/*task-13*/
+#task-13 label,
+#task-13 div{
+	margin-left: 35px;
+}
+
+#task-13 label{
+	padding: 10px 0;
+}
+
+#aqi-input{
+	border: 1px solid #61b292;
+	padding: 5px;
+}
+
+#button{
+	display: block;
+	width: 100px;
+	height: 30px;
+	border: 1px solid #61b292;
+	border-radius: 5px;
+	font-size: 16px;
+	color: #61b292;
+	background-color: transparent;
+	margin: 20px 0;
+	transition: .5s;
+	margin-left: 100px;
+}
+
+#button:hover{
+	cursor: pointer;
+	background-color: #61b292;
+	color: #fff;
+}
+
+
+/*task-14*/
+#task-14 h3{
+	margin: 10px 35px;
+	font-size: 22px;
+	color: #444;
+}
+
+#aqi-list{
+	margin-left: 35px;
+}
+
+#aqi-list li{
+	padding: 10px 0;
+}
+
+
+/*task-15*/
+#source{
+	float: left;
+	padding: 10px 0 10px 100px;
+}
+
+#sort-btn{
+	display: block;
+	width: 100px;
+	height: 30px;
+	float: left;
+	margin: 75px 50px;
+	border: 1px solid #61b292;
+	border-radius: 5px;
+	background-color: transparent;
+	font-size: 16px;
+	color: #61b292;
+	transition: .5s;
+}
+
+#sort-btn:hover{
+	cursor: pointer;
+	background-color: #61b292;
+	color: #fff;
+}
+
+#resort{
+	float: left;
+	padding: 10px 0;
+}
+
+
+/*task-16*/
+#task-16 div{
+	padding: 10px 0 10px 35px;
+	float: left;
+}
+
+#task-16 div label{
+	line-height: 40px;
+}
+
+#task-16 div label:first-child:before{
+	content: " ";
+	display: inline-block;
+	width: 2em;
+	height: 1em;
+}
+
+#task-16 div label input{
+	padding: 5px;
+}
+
+#add-btn{
+	display: block;
+	width: 100px;
+	height: 30px;
+	margin: 10px 0 10px 7em;
+	border: 1px solid #61b292;
+	border-radius: 5px;
+	background-color: transparent;
+	font-size: 16px;
+	color: #61b292;
+	transition: .5s;
+}
+
+#add-btn:hover{
+	cursor: pointer;
+	background-color: #61b292;
+	color: #fff;
+}
+
+.err-tips{
+	font-size: 12px;
+	color: #b72a67;
+	padding-left: 9em;
+}
+
+#aqi-table{
+	float: left;
+	margin: 10px 0 10px 200px;
+	border-collapse: collapse;
+	color: #333;
+}
+
+#aqi-table tr td{
+	height: 30px;
+	text-align: center;
+	border: 1px solid #fff;
+}
+
+#aqi-table tr td:nth-child(1){
+	width: 20%;
+}
+
+#aqi-table tr td:nth-child(2){
+	width: 15%;
+}
+
+#aqi-table tr td:nth-child(3){
+	width: 5%;
+}
+
+#aqi-table tr:nth-child(odd){
+	background-color: #f6f6f6;
+}
+
+#aqi-table tr:nth-child(even){
+	background-color: #efecea;
+}
+
+#aqi-table button{
+	background-color: transparent;
+	border: 0;
+	color: #5B96FC;
+	text-decoration: underline;
+	cursor: pointer;
+}

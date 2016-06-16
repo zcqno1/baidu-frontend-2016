@@ -1,0 +1,23 @@
+demo；[使用HTML/CSS实现一个复杂页面](https://github.com/zcqno1/baidu-frontend-2016/tree/master/task0001/task0001-9/task0001-9.html)
+
+[设计稿](https://github.com/zcqno1/baidu-frontend-2016/tree/master/task0001/task0001-9/img/task_1_9_2.jpg)
+
+* CSS实现tag切换
+	1.利用`<a>`的跳转；
+	2.利用label~input组合。
+
+* outline，输入框的聚焦外边框
+
+* 列表缩进
+
+* pointer-event:none ，设置鼠标点击动作
+
+* nth-child()在表格单元格内选择的问题
+
+* 表格的border-collapse对tr~border的影响
+
+* 表格的尺寸与其内表单的关系
+
+* progress的style     [参考](https://css-tricks.com/html5-progress-element/)
+
+* inline-block gap    [参考](https://css-tricks.com/fighting-the-space-between-inline-block-elements/)
