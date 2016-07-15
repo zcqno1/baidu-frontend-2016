@@ -1,0 +1,39 @@
+# 基础Javascript练习
+
+## 任务十八
+
+任务十八比较简单，没有复杂的逻辑，有了前面任务的铺垫，在代码逻辑方面没有什么问题，倒是在细节之处（如空队列提示、输入错误提示等）因为反复顾及css而花了不少时间。这个任务主要应用到的一些JS数组的API，如`push`、`pop`、`shift`、`unshift`、`splice`等，此外在点击数字就删除该数字这里遇到一个问题：如何确定当前数字是哪个（考虑到数字可能重复）并将其从数组中删除？我的思路是确定被点击数字的位置，但由于通过`getElementsByTagName`返回的是一个类数组，不能直接调用数组的方法，要调用数组的方法可以通过`call`方法（`Array.prototype.indexOf.call()`）。
+
+虽然完好地实现了任务要求，但当我review[**组队来卖萌的**队伍的代码](https://github.com/hellozts4120/IFE-2016/blob/master/task2/serial2/Project18/task.js )时，才发现原来可以这么写，有一种这么写看起来很棒的感觉。
+
+该队伍将数字队列封装成一个对象，对其进行的操作就是该对象的方法。这样让数字队列活了起来，让整个程序也活了起来。我的代码则是按照比较固定的步骤一个一个函数写下来，整体可读性较差、可复用程度较低。
+
+该队伍的代码跟我的代码体现的是编程者两种不同思维方式，前者是面向对象的思维方式，而后者我觉得还是比较典型的面向过程的思维方式。Javascript是一门面向对象的语言，前者的写法显然更符合这种语言的用法，虽然我的代码里也是在使用各种对象，但却仅仅局限于Javascript原本的基础API的调用，未能真正发挥面向对象编程的作用。
+
+任务十九跟任务十八比较相似，任务十九将采用对象封装的方法来编程。
+
+## 任务十九
+
+任务十九采用了对象封装的方法来编程，加深了对对象的理解。过程遇到的一些问题（不全记录）及相应解决方案如下：
+
+* `removeChild()`抛出异常的两种情况：1. child存在，但已被移除（The node to be removed is not a child of this node.）。2. child不存在（parameter 1 is not of type 'Node'.）。[参考](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
+
+* `setTimeout()`中`this`的问题：回调函数（方法）如果没有设置`this`的指向的话，会被默认指向`window`（非严格模式，严格模式下为`undefined`），因为由`setTimeout()`执行的代码会从一个独立的执行上下文被调用到`setTimeout()`被调用的位置。解决详见：https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout#The_this_problem
+
+* javascript同时设置多个css属性操作：1. 设置`obj.style.cssText`属性值；2. `obj.setAttribute()`；3. `Object.assign(obj.style, {style})；4. 利用循环等手段。[参考](http://stackoverflow.com/questions/3968593/how-to-set-multiple-css-style-properties-in-javascript)
+
+后面两个项目也相继进行了对象封装，其中任务二十涉及到排序及其可视化显示，由于采用setTimeout()的方式，对可视样式进行设置，再加上一些提示性的地方（上面两个任务也有），代码相对混乱，代码复用性较差。可视化排序只完成冒泡排序，快速排序遇到困难（暂时放弃）。
+
+任务二十一则稍微好一些，省去了不必要的提示，两个小李子基于同一个原型进行创建，提高代码复用性。后两个任务遇到的一些问题如下：
+
+* 变量命名问题，前三个任务的变量命名较复杂啰嗦，刚好看到[这篇文章](http://yemengying.com/2016/06/25/cleanCode4naming/)，于是在任务二十一对变量名进行一定程度上的简化。
+
+* 原型属性被修改的问题：创建两个继承对象时，没有定义自有的data属性，导致原型中的data属性被修改。
+
+* 绑定点击删除标签时，一开始的写法是点击就从数组中删除及DOM中删除，虽然通过闭包绑定了相应id，绑定的id是不变的，但删除DOM节点后的id会发生改变，导致点击删除前面的标签后，后面的顺序就错位了。最后是通过从数组中删除后再重新render一次，在render中再次绑定点击删除事件。
+
+* 输入框更改触发事件使用了“input”事件。
+
+* 回车符号不会加到文本框的字符串中，所以增加了`onkeyup`事件，根据`event.keyCode==13`来判断回车输入。键盘事件（keyboard event)有三种：`onkeypress`、`onkeyup`、`onkeydown`，触发对应的event对象有个keyCode属性，不同之处在于`onkeypress`返回的时Unicode character code（ASCII码），`onkeyup`和`onkeydown`返回的是Unicode key code（对应键盘上的按键）。event一般作为事件回掉函数的第一个参数传入。兼容ie使用`window.event.keyCode`，`window.event`是微软ie的一个全局对象，当一个DOM事件操作句柄被调用时才有效（[参考](https://developer.mozilla.org/en-US/docs/Web/API/Window/event)），具体见[MSDN上的介绍](https://msdn.microsoft.com/en-us/library/ms535863(v=vs.85).aspx)。兼容firefox使用`event.which`。
+
+* 检测分割符号使用了一些正则表达式，但明显不够熟悉。

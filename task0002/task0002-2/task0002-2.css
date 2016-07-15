@@ -1,0 +1,418 @@
+html, body, nav, section, ul, li, a, header, h1, h2, h3, div, input, span, p{
+	margin: 0;
+	box-sizing: border-box;
+}
+
+ul, li{
+	padding: 0;
+}
+
+li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+body{
+	padding: 0 60px;
+	font-family: "Microsoft YaHei";
+	background-color: #f5f9f3;
+}
+
+/*清除浮动*/
+.clear-fix::before,
+.clear-fix::after{
+	content: " ";
+	display: table;
+}
+
+.clear-fix::after{
+	clear: both;
+	zoom: 1;
+}
+
+.clear-fix{
+	clear: both;
+}
+
+/*导航条*/
+.nav{
+	width: 100%;
+	height: 60px;
+	padding-left: 80px;
+	background-color: #3f423b;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.nav li{
+	float: left;
+	width: 160px;
+	height: 60px;
+}
+
+.nav a{
+	display: block;
+	width: 160px;
+	height: 60px;
+	color: #fff;
+	font-size: 26px;
+	line-height: 60px;
+	text-align: center;
+	transition: all .5s ease;
+}
+
+.nav a:hover{
+	background-color: #cebe8b;
+	height: 80px;
+}
+
+/*任务section及标题*/
+section{
+	height: 700px;
+	padding: 100px 0;
+}
+
+section>*:not(header){
+	margin-left: 30px;
+}
+
+section>header{
+	background-color: #83d2ff;
+	border-left: 5px solid #ff9273;
+	padding-left: 30px;
+	margin-bottom: 20px;
+}
+
+h1{
+	display: inline-block;
+	color: #444;
+	font-size: 26px;
+	line-height: 60px;
+}
+
+.task-intro{
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+}
+
+.task-arrow{
+	width: 32px;
+	height: 32px;
+	position: relative;
+	top: 14px;
+	transition: transform .5s ease;
+}
+
+.task-arrow::before{
+	content: " ";
+	display: block;
+	border: 16px solid transparent;
+	border-left: 16px solid #5d5d5d;
+	margin-left: 8px;
+	transition: border-color .35s ease;
+}
+
+
+.task-description{
+	display: none;
+	width: 300px;
+	position: absolute;
+	left: -125px;
+	top: 50px;
+	border: 1px solid #98b6be;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: rgba(225, 255, 196, 0.25);
+}
+
+.task-description li{
+	font: 12px/16px "Microsoft YaHei";
+	margin-bottom: 5px;
+	position: relative;
+}
+
+.task-description li::before{
+	content: " ";
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+	background-color: #333;
+	vertical-align: baseline;
+	margin-right: 5px;
+}
+
+.prototype{
+	color: blue;
+	cursor: pointer;
+}
+
+.task-description img{
+	display: none;
+	width: 400px;
+	position: absolute;
+	left: -200px;
+	top: 16px;
+	border: 6px solid #aaa;
+	border-radius: 10px;
+	z-index: 10;
+}
+
+.prototype:hover ~ img{
+	display: block;
+}
+
+.prototype ~ img:hover{
+	display: block;
+}
+
+.task-intro:hover .task-arrow{
+	transform: rotate(90deg);
+}
+
+.task-intro:hover .task-arrow::before{
+	border-left-color: #ff9273;
+}
+
+.task-intro:hover .task-description{
+	display: inline-block;
+}
+
+/**
+ * 任务十八
+ */
+.controller{
+	text-align: center;
+}
+
+.controller input{
+	height: 30px;
+	border: 0;
+	font-size: 16px;
+	line-height: 30px;
+	text-align: center;
+	vertical-align: top;
+	margin-bottom: 10px;
+}
+
+.controller input[type=text]{
+	width: 140px;
+	padding-left: 5px;
+	border-bottom: 1px solid #888;
+	outline: none;
+	background-color: transparent;
+}
+
+.controller input[type=button]{
+	margin-left: 5px;
+	color: #fff;
+	background-color: #d3dbde;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: all .35s ease;
+}
+
+.controller input[type=button]:hover{
+	background-color: #8bbcca;
+}
+
+.controller input:nth-child(2n+1){
+	margin-right: 20px;
+}
+
+.err-warn{
+	height: 30px;
+	font-size: 12px;
+	line-height: 30px;
+	color: red;
+}
+
+.num-queue{
+	margin-top: 10px;
+	text-align: center;
+}
+
+.num-queue-t18 div{
+	display: inline-block;
+	height: 50px;
+	padding: 16px 14px;
+	margin: 0 5px 10px;
+	font-size: 18px;
+	line-height: 18px;
+	color: #fff;
+	background-color: #98b6be;
+	cursor: pointer;
+}
+
+.num-queue div:hover{
+	opacity: 0.9;
+}
+
+.queue-empty{
+	font-size: 18px;
+	line-height: 50px;
+	font-style: italic;
+	color: #98b6be;
+}
+
+
+/**
+ * 任务十九
+ */
+.num-queue-t19{
+	height: 300px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.num-queue-t19 div{
+	width: 20px;
+	/*height: 100px;*/
+	border: 1px solid #fff;
+	border-width: 0 1px;
+	background-color: #17ab94;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+}
+
+.num-queue-t19 .queue-empty{
+	align-self: flex-start;
+}
+
+/**
+ * 任务二十
+ */
+#ip-area-t20{
+	min-width: 400px;
+	height: 58px;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 5px;
+	resize: none;
+}
+
+#task-20 input{
+	margin: 10px;
+}
+
+.queue-t20 div{
+	display: inline-block;
+	height: 50px;
+	padding: 16px 14px;
+	margin: 0 5px 10px;
+	font-size: 18px;
+	line-height: 18px;
+	color: #fff;
+	background-color: #98b6be;
+	cursor: pointer;
+}
+
+
+/**
+ * 任务二十一
+ */
+#task-21 label{
+	font: 18px/24px "Microsoft YaHei";
+}
+
+#ip-tag{
+	font: 14px/24px "Microsoft YaHei";
+	margin-left: 10px;
+	padding: 0 5px;
+
+}
+
+#task-21 #ip-tag:focus{
+	border-color: transparent;
+	border-radius: 3px;
+	box-shadow: 0 0 5px 3px #67afff;
+}
+
+#task-21 .tag-queue{
+	min-height: 50px;
+	margin: 20px 30px 10px;
+}
+
+#task-21 .tag-queue div{
+	display: inline-block;
+	margin: 0 5px 5px 0;
+	padding: 0 5px;
+	font: 24px/34px "Microsoft YaHei";
+	color: #fff;
+	background-color: #67afff;
+	cursor: pointer;
+	transition: background-color .35s ease;
+	/*position: relative;
+	overflow: hidden;*/
+}
+
+#task-21 .tag-queue:nth-of-type(2) div{
+	background-color: #ffc883;
+}
+
+#task-21 .tag-queue:first-of-type div:hover{
+	background-color: #ff7676;
+	/*background-color: rgba(103, 175,255, 0.5);*/
+}
+
+#task-21 .tag-queue:first-of-type div::before{
+	content: "删除";
+	display: inline-block;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	font-size: 20px;
+	transition: width .35s ease-in;
+	vertical-align: top;
+}
+
+#task-21 .tag-queue:first-of-type div:hover::before{
+	width: 2em;
+	height: 34px;
+	margin-right: 5px;
+}
+
+/*#task-21 .tag-queue:first-of-type div::before{
+	content: "删除";
+	display: block;
+	width: 50%;
+	height: 34px;
+	position: absolute;
+	left: -50%;
+	overflow: hidden;
+	font-size: 20px;
+	text-align: center;
+	background-color: #ff7676;
+	transition: left .35s ease-in-out;
+	vertical-align: top;
+}
+#task-21 .tag-queue:first-of-type div:hover::before{
+	left: 0;
+}*/
+
+#task-21 textarea{
+	width: 250px;
+	height: 80px;
+	padding: 5px;
+	font: bold 14px/20px "Microsoft YaHei";
+}
+
+#btn-submit{
+	padding: 0 12px;
+	font: bold 15px/22px "Microsoft YaHei";
+	color: #333;
+	border: .5px solid #ccc;
+	border-radius: 5px;
+	background-color: transparent;
+	box-shadow: 0 1px 0 #bbb;
+	cursor: pointer;
+}

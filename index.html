@@ -4,30 +4,51 @@
 	<meta charset="utf-8">
 	<title>百度前端技术学院2016春季班任务</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 <body>
 <!-- 导航 -->
 	<header class="header clearfix">
 		<nav>
 			<ul>
-				<li id="developer">前端爱好者-海绵</li>
-				<li id="home"><a href="http://zcqno1.github.io/">← 回首页</a></li>
-				<div class="nav-main">
-					<li><a href="#stage-1">第一阶段</a></li>
-					<li><a href="#stage-2">第二阶段</a></li>
-					<li><a href="#stage-3">第三阶段</a></li>
-					<li><a href="#stage-4">第四阶段</a></li>
-				</div>
+				<li id="developer" title="开发者">前端爱好者-海绵</li>
+				<li id="home">
+					<a href="http://zcqno1.github.io/">← 回首页</a>
+					<a href="http://zcqno1.github.io/">&lt;</a>
+				</li>
+				<li class="nav-main">
+					<ul>
+						<li><a href="#stage-1">第一阶段</a></li>
+						<li><a href="#stage-2">第二阶段</a></li>
+						<li><a href="#stage-3">第三阶段</a></li>
+						<li><a href="#stage-4">第四阶段</a></li>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 	</header>
 
 <!-- 图例 -->
 	<section class="legend">
-		<div class="level-easy"></div><span>简单</span>
-		<div class="level-normal"></div><span>中等</span>
-		<div class="level-hard"></div><span>困难</span>
-		<div class="unfinished"></div><span>未完成</span>
+		<ul>
+			<li>
+				<div class="level-easy" title="点击筛选简单任务">
+				</div>
+				<span>简单&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			</li>
+			<li>
+				<div class="level-normal" title="点击筛选中等难度任务"></div>
+				<span>中等&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			</li>
+			<li>
+				<div class="level-hard" title="点击筛选困难任务"></div>
+				<span>困难&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			</li>
+			<li>
+				<div class="unfinished" title="点击筛选未完成任务"></div>
+				<span>未完成</span>
+			</li>
+		</ul>
 	</section>
 
 <!-- 第一阶段任务 -->
@@ -149,26 +170,26 @@
 					</a>
 				</li>
 
-				<li class="level-easy unfinished">
-					<a href="task0001/task0002-18/task0002-18.html" target="_blank">
+				<li class="level-easy">
+					<a href="task0001/task0002-18/task0002-2.html#task-18" target="_blank">
 						<p>任务十八：基础JavaScript练习（一）</p>
 					</a>
 				</li>
 
-				<li class="level-easy unfinished">
-					<a href="task0001/task0002-19/task0002-19.html" target="_blank">
+				<li class="level-easy">
+					<a href="task0001/task0002-19/task0002-2.html#task-19" target="_blank">
 						<p>任务十九：基础JavaScript练习（二）</p>
 					</a>
 				</li>
 
-				<li class="level-easy unfinished">
-					<a href="task0001/task0002-20/task0002-20.html" target="_blank">
+				<li class="level-easy">
+					<a href="task0001/task0002-20/task0002-2.html#task-20" target="_blank">
 						<p>任务二十：基础JavaScript练习（三）</p>
 					</a>
 				</li>
 
-				<li class="level-normal unfinished">
-					<a href="task0001/task0002-21/task0002-21.html" target="_blank">
+				<li class="level-normal">
+					<a href="task0001/task0002-21/task0002-2.html#task-21" target="_blank">
 						<p>任务二十一：基础JavaScript练习（四）</p>
 					</a>
 				</li>
@@ -270,19 +291,15 @@
 	<footer class="footer clearfix">
 		<nav class="frend-link">
 			<header>
-				<h3>友情链接</h3>
+				<h3>相关链接</h3>
 			</header>
-			<ul>
-				<li><a href="http://ife.baidu.com" target="_blank">百度前端技术学院</a></li>
-			</ul>
+			<a href="http://ife.baidu.com" target="_blank">百度前端技术学院</a>
 		</nav>
 		<nav class="reference">
 			<header>
 				<h3>参考资料</h3>
 			</header>
-			<ul>
-				<li><a href="http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/" target="_blank">CSS深入理解vertical-align和line-height的基友关系 @张鑫旭</a></li>
-			</ul>
+			<a href="http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/" target="_blank">CSS深入理解vertical-align和line-height的基友关系 @张鑫旭</a>
 		</nav>
 	</footer>
 
@@ -312,6 +329,22 @@
 				}
 			})
 		}
+
+		//导航自适应
+		window.addEventListener(window.onorientationchange ? "orientationchange" : "resize", setNavWidth);
+		function setNavWidth(){
+			var mainNav = document.getElementsByClassName("nav-main")[0];
+			var width = window.innerWidth;
+			if(width < 680 && width > 480)
+				mainNav.style.width = width - 120 - 20 + "px";
+			else if(width <= 480 && width > 360)
+				mainNav.style.width = width - 60 - 20 + "px";
+			else if(width <= 360)
+				mainNav.style.width = width - 40 - 20 + "px";
+			else
+				mainNav.style.width = "";
+		}
+		setNavWidth();
 	</script>
 </body>
 </html>
